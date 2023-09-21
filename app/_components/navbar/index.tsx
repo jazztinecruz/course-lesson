@@ -21,11 +21,13 @@ const Navbar = () => {
         <h1 className="font-bold text-lg">NuCamp</h1>
       </div>
 
-      <ul className="flex items-center mx-auto gap-2">
-        {menus.map((menu) => (
-          <NavLink key={menu.name} menu={menu} />
-        ))}
-      </ul>
+      <div className="hidden lg:block mx-auto">
+        <ul className="flex items-center gap-2">
+          {menus.map((menu) => (
+            <NavLink key={menu.name} menu={menu} />
+          ))}
+        </ul>
+      </div>
 
       <button className="border rounded px-4 py-2 border-pink text-pink font-medium hover:bg-pink duration-500 hover:text-white">
         Login
