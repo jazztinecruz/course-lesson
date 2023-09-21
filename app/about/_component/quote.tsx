@@ -9,7 +9,7 @@ const Quote = () => {
         no path, and I will leave a trail.
       </p>
       <span>
-        - Muriel Strode, "Wind-Wafted Wild Flowers" - The Open Court, 1903
+        - Muriel Strode, &apos;Wind-Wafted Wild Flowers&apos; - The Open Court, 1903
       </span>
     </section>
   );
