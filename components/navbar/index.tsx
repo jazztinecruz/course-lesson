@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import NavLink from "./nav-link";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Login from "../modals/login";
-import { Context } from "@/contexts/context-provider";
+import useMyContext from "@/hooks/use-context";
 
 const menus = [
   { name: "Home", link: "/" },
@@ -15,7 +15,7 @@ const menus = [
 
 const Navbar = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
-  const { isSignedIn, user } = useContext(Context);
+  const { isSignedIn, user } = useMyContext();
 
   return (
     <nav className="grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3">

@@ -1,15 +1,15 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import { Dispatch, SetStateAction, useContext } from "react";
-import { Context } from "@/contexts/context-provider";
+import { Dispatch, SetStateAction } from "react";
 import handleValidateLoginForm from "@/validations/login";
 import Image from "next/image";
+import useMyContext from "@/hooks/use-context";
 
 type Props = {
   setOpenLoginModal: Dispatch<SetStateAction<boolean>>;
 };
 
 const LoginForm = ({ setOpenLoginModal }: Props) => {
-  const { setIsSignedIn, setUser } = useContext(Context);
+  const { setIsSignedIn, setUser } = useMyContext();
 
   return (
     <div
