@@ -1,7 +1,7 @@
-import Hero from "./_component/hero";
-import Mission from "./_component/mission";
-import Partnerships from "./_component/partnerships";
-import Quote from "./_component/quote";
+import Hero from "./_components/hero";
+import Mission from "./_components/mission";
+import Partnerships from "./_components/partnerships";
+import Quote from "./_components/quote";
 
 const AboutPage = () => (
   <div className="grid gap-16">
