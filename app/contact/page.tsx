@@ -19,7 +19,7 @@ const ContactPage = () => {
         </div>
       </Hero>
 
-      <div className="grid grid-cols-[2fr,1fr] items-start gap-4">
+      <div className="grid lg:grid-cols-[2fr,1fr] items-start gap-4">
         <ContactForm />
         <Details />
       </div>
