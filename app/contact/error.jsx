@@ -1,12 +1,6 @@
 "use client";
 
-const ContactErrorPage = ({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) => {
+const ContactErrorPage = ({ error, reset }) => {
   return (
     <html>
       <body>

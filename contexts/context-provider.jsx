@@ -1,14 +1,10 @@
 "use client";
 
-import { ReactNode, createContext, useState } from "react";
+import { createContext, useState } from "react";
 
-export const Context = createContext<any>(null);
+export const Context = createContext(null);
 
-type Props = {
-  children: ReactNode;
-};
-
-const ContextProvider = ({ children }: Props) => {
+const ContextProvider = ({ children }) => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [user, setUser] = useState("");
 

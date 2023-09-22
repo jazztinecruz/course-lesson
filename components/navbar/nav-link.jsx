@@ -3,14 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-type Props = {
-  menu: {
-    name: string;
-    link: string;
-  };
-};
-
-const NavLink = ({ menu }: Props) => {
+const NavLink = ({ menu }) => {
   const pathname = usePathname();
   const isActive = pathname === menu.link;
 

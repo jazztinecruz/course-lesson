@@ -1,10 +1,10 @@
-const handleValidateContactForm = (values: any) => {
-  const errors: typeof values = {};
+const handleValidateContactForm = (values) => {
+  const errors = {};
 
   const validateField = (
-    fieldName: typeof values,
-    min: number,
-    max: number
+    fieldName,
+    min,
+    max
   ) => {
     const reg = /^\d+$/;
 

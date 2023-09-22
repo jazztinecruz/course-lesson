@@ -4,11 +4,7 @@ import handleValidateLoginForm from "@/validations/login";
 import Image from "next/image";
 import useMyContext from "@/hooks/use-context";
 
-type Props = {
-  setOpenLoginModal: Dispatch<SetStateAction<boolean>>;
-};
-
-const LoginForm = ({ setOpenLoginModal }: Props) => {
+const LoginForm = ({ setOpenLoginModal }) => {
   const { setIsSignedIn, setUser } = useMyContext();
 
   return (

@@ -1,10 +1,10 @@
-const handleValidateLoginForm = (values: any) => {
-  const errors: typeof values = {};
+const handleValidateLoginForm = (values) => {
+  const errors = {};
 
   const validateField = (
-    fieldName: typeof values,
-    min: number,
-    max: number
+    fieldName,
+    min,
+    max
   ) => {
     if (!values[fieldName]) {
       errors[fieldName] = "Field is required.";

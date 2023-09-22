@@ -1,6 +1,6 @@
 "use client";
 
-const ErrorPage = ({ error, reset }: { error: Error; reset: () => void }) => {
+const ErrorPage = ({ error, reset }) => {
   return (
     <html>
       <body>

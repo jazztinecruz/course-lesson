@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/modals/login/form.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/modals/login/form.jsx", "validations/login.js", "validations/feedback.js", "hooks/use-context.js", "contexts/context-provider.jsx", "constants/about.js", "components/hero.jsx", "components/navbar/nav-link.jsx", "components/navbar/index.jsx", "components/modals/login/index.jsx", "app/page.jsx", "app/layout.jsx", "app/error.jsx", "app/directory/page.jsx", "app/contact/page.jsx", "app/contact/error.jsx", "app/contact/_components/form.jsx", "app/contact/_components/details.jsx", "app/about/page.jsx", "app/about/_components/quote.jsx", "app/about/_components/partnerships.jsx", "app/about/_components/mission.jsx"],
   "exclude": ["node_modules"]
 }

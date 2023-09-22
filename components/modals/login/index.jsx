@@ -1,12 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
 import LoginForm from "./form";
 
-type Props = {
-  isOpen: boolean;
-  setOpenLoginModal: Dispatch<SetStateAction<boolean>>;
-};
-
-const Login = ({ isOpen, setOpenLoginModal }: Props) => {
+const Login = ({ isOpen, setOpenLoginModal }) => {
   if (!isOpen) return null;
 
   return (

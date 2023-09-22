@@ -1,17 +1,16 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ContextProvider from "@/contexts/context-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "NuCamp",
   description: "NuCamp React Course Lesson",
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body
