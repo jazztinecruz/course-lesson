@@ -1,15 +1,13 @@
-import { partnerships } from "@/constants/about";
+import { PARTNERSHIPS } from "@/constants/about";
 import Image from "next/image";
 
 const Partnerships = () => {
   return (
     <section className="flex flex-col items-center gap-4">
-      <h2 className="text-center text-2xl font-bold">
-        Our Community Partners
-      </h2>
+      <h2 className="text-center text-2xl font-bold">Our Community Partners</h2>
 
       <ul className="grid md:grid-cols-2 gap-16 py-4 max-w-7xl">
-        {partnerships.map((company) => (
+        {PARTNERSHIPS.map((company) => (
           <div
             key={company.alt}
             className="flex flex-col justify-center items-center text-center gap-4">

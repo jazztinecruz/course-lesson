@@ -1,4 +1,4 @@
-import { metrics } from "@/constants/about";
+import { METRICS } from "@/constants/about";
 
 const Mission = () => {
   return (
@@ -17,7 +17,7 @@ const Mission = () => {
       </div>
 
       <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {metrics.map((metric) => (
+        {METRICS.map((metric) => (
           <div
             key={metric.name}
             className="relative group border rounded-md px-4 py-8 flex flex-col text-center items-center">

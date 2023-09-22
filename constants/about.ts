@@ -1,4 +1,4 @@
-export const metrics = [
+export const METRICS = [
   {
     name: "Founded",
     value: "2016",
@@ -17,7 +17,7 @@ export const metrics = [
   },
 ];
 
-export const partnerships = [
+export const PARTNERSHIPS = [
   {
     link: "/images/partnerships/bootstrap.png",
     alt: "Bootstrap Outfitters",
