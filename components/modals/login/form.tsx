@@ -12,7 +12,9 @@ const LoginForm = ({ setOpenLoginModal }: Props) => {
   const { setIsSignedIn, setUser } = useContext(Context);
 
   return (
-    <div className="space-y-6 p-10 bg-white mt-auto shadow-md rounded-md">
+    <div
+      onClick={(event) => event?.stopPropagation()}
+      className="w-full max-w-2xl space-y-6 p-8 lg:p-10 bg-white shadow-md rounded-md">
       <div className="flex flex-col items-center text-center gap-2">
         <div className="flex items-center gap-4 mb-4">
           <Image
@@ -46,7 +48,7 @@ const LoginForm = ({ setOpenLoginModal }: Props) => {
         validate={(values) => handleValidateLoginForm(values)}>
         {({ handleSubmit }) => (
           <Form className="flex flex-col gap-4 w-full ">
-            <div>
+            <div className="flex flex-col gap-1">
               <Field
                 name="username"
                 placeholder="Username"
@@ -55,7 +57,7 @@ const LoginForm = ({ setOpenLoginModal }: Props) => {
               <ErrorMessage name="username" />
             </div>
 
-            <div className="last:text-red-500">
+            <div className="flex flex-col gap-1">
               <Field
                 type="password"
                 name="password"
