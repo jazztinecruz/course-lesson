@@ -30,14 +30,14 @@ const HomePage = async () => {
     <div className="space-y-4">
       <Hero>
         <div className="max-w-xl">
-          <h1 className="text-3xl font-bold mb-4 flex flex-col">
-            <span>Bootcamp Campsites</span>
-            <span>Explore Your Options</span>
+          <h1 className="text-4xl font-bold mb-4">
+            Embark on Your Tech Journey Today.
           </h1>
-          <p className="font-semibold">
-            Welcome to our bootcamp campsites page! Here, you can find a list of
-            all available campsites for your coding bootcamp experience. Choose
-            the one that suits you best and start your coding journey today.
+          <p className="text-lg font-semibold">
+            Unlock Your Coding Potential with the Highest-Rated and
+            Budget-Friendly Coding Bootcamps. Transform into a software engineer
+            with our cutting-edge curriculum, adaptable learning hours, seasoned
+            mentors, and cost-effective tuition.
           </p>
         </div>
       </Hero>
