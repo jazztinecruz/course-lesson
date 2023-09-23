@@ -82,6 +82,13 @@
       "campsiteId": 3,
       "user": "fdddddddddd",
       "id": 7
+    },
+    {
+      "rating": "5",
+      "message": "Sample one",
+      "campsiteId": 0,
+      "user": "Jazztine",
+      "id": 8
     }
   ],
   "partners": [
