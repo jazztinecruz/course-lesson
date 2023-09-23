@@ -75,6 +75,13 @@
       "campsiteId": 3,
       "user": "Elsa the Queen",
       "id": 6
+    },
+    {
+      "rating": 1,
+      "message": "fdddddddddddd",
+      "campsiteId": 3,
+      "user": "fdddddddddd",
+      "id": 7
     }
   ],
   "partners": [
