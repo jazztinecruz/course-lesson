@@ -13,7 +13,7 @@ const Details = ({ campsite }) => {
 
       <div className="flex flex-col mt-auto gap-2 z-50">
         <h2 className="text-2xl font-bold text-white">{campsite.name}</h2>
-        <p className="text-white opacity-75 font-semibold">
+        <p className="text-white opacity-75 font-semibold max-w-2xl">
           {campsite.description}
         </p>
         <span className="text-white text-sm opacity-75 font-semibold">

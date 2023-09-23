@@ -6,16 +6,16 @@ const Comments = ({ campsiteId }) => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    const handleFetchComments = async () => {
-      const commentsResponse = await fetch(`http://localhost:3001/comments`);
-      const comments = await commentsResponse.json();
-      setComments(
-        comments.filter((comment) => comment.campsiteId === campsiteId)
+    const fetchComments = async () => {
+      const response = await fetch(`http://localhost:3001/comments`);
+      const allComments = await response.json();
+      const filteredComments = allComments.filter(
+        (comment) => comment.campsiteId === campsiteId
       );
-      return comments;
+      setComments(filteredComments);
     };
 
-    handleFetchComments();
+    fetchComments();
   }, []);
 
   return (
