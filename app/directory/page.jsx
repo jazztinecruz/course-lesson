@@ -21,7 +21,7 @@ const DirectoryPage = async () => {
         </div>
       </Hero>
 
-      <ul className="grid lg:grid-cols-2">
+      <ul className="grid lg:grid-cols-2 gap-4">
         {campsites.map((campsite) => (
           <Card key={campsite.id} campsite={campsite} />
         ))}
