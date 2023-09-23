@@ -7,23 +7,19 @@ const serverUrls = [
 ];
 
 const HomePage = async () => {
-  const response1 = await fetch(serverUrls[0]);
-  const campsites = await response1.json();
+  const fetchAndParse = async (url) => {
+    const response = await fetch(url);
+    return await response.json();
+  };
 
-  const response2 = await fetch(serverUrls[1]);
-  const partners = await response2.json();
-
-  const response3 = await fetch(serverUrls[2]);
-  const promotions = await response3.json();
+  const campsites = await fetchAndParse(serverUrls[0]);
+  const partners = await fetchAndParse(serverUrls[1]);
+  const promotions = await fetchAndParse(serverUrls[2]);
 
   const featured = [
-    ...campsites
-      .filter((campsite) => campsite.featured)
-      .map((campsite) => campsite),
-    ...partners.filter((partner) => partner.featured).map((partner) => partner),
-    ...promotions
-      .filter((promotion) => promotion.featured)
-      .map((promotion) => promotion),
+    ...campsites.filter((campsite) => campsite.featured),
+    ...partners.filter((partner) => partner.featured),
+    ...promotions.filter((promotion) => promotion.featured),
   ];
 
   return (
