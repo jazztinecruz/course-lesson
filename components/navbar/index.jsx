@@ -53,7 +53,7 @@ const Navbar = () => {
         <h1 className="font-bold text-lg">NuCamp</h1>
       </div>
 
-      {/* laptop */}
+      {/* laptop navigation links */}
       <div className="hidden lg:block mx-auto">
         <ul className="flex items-center gap-2">
           {menus.map((menu) => (
@@ -62,6 +62,7 @@ const Navbar = () => {
         </ul>
       </div>
 
+      {/* mobile navigation links */}
       <div
         onClick={() => dispatch({ type: "menu", payload: false })}
         className="lg:hidden relative flex">
@@ -84,7 +85,8 @@ const Navbar = () => {
           </ul>
         )}
       </div>
-
+      
+      {/* sign in button and component */}
       {isSignedIn ? (
         <div className="flex items-center gap-4">
           <h2 className="font-semibold text-right">Welcome {user}!</h2>
