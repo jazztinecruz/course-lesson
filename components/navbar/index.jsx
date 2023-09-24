@@ -5,6 +5,7 @@ import NavLink from "./nav-link";
 import { useState } from "react";
 import Login from "../modals/login";
 import useMyContext from "@/hooks/use-context";
+import { useSpring } from "@react-spring/web";
 
 const menus = [
   { name: "Home", link: "/" },
@@ -17,6 +18,11 @@ const Navbar = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const { isSignedIn, user } = useMyContext();
+
+  const animatedMenuStyle = useSpring({
+    scale: openMenu ? 1.5 : 0,
+    config: { duration: 500 },
+  });
 
   return (
     <nav className="grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3 px-4">
@@ -51,7 +57,9 @@ const Navbar = () => {
           Menu
         </button>
         {openMenu && (
-          <ul className="absolute left-0 w-full top-10 flex flex-col gap-2 bg-white shadow-md rounded z-10 p-2">
+          <ul
+            style={animatedMenuStyle}
+            className="absolute left-0 w-full top-10 flex flex-col gap-2 bg-white shadow-md rounded z-10 p-2">
             {menus.map((menu) => (
               <NavLink key={menu.name} menu={menu} />
             ))}
