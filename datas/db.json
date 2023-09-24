@@ -89,6 +89,27 @@
       "campsiteId": 0,
       "user": "Jazztine",
       "id": 8
+    },
+    {
+      "rating": "5",
+      "message": "dsffffffffffffffffffffffffffffffffffffffffff",
+      "campsiteId": 3,
+      "user": "jazztine",
+      "id": 9
+    },
+    {
+      "rating": 1,
+      "message": "so saaaaaaaaaaad",
+      "campsiteId": 3,
+      "user": "saaadlyf",
+      "id": 10
+    },
+    {
+      "rating": 1,
+      "message": "sdddddddddddddddd",
+      "campsiteId": 3,
+      "user": "saaadlyf",
+      "id": 11
     }
   ],
   "partners": [

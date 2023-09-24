@@ -16,7 +16,7 @@ const Comments = ({ campsiteId }) => {
     };
 
     fetchComments();
-  }, []);
+  }, [comments]);
 
   return (
     <div className="space-y-4 ">
