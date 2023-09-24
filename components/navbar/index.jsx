@@ -15,10 +15,11 @@ const menus = [
 
 const Navbar = () => {
   const [openLoginModal, setOpenLoginModal] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const { isSignedIn, user } = useMyContext();
 
   return (
-    <nav className="grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3">
+    <nav className="grid grid-cols-[auto,1fr,auto] items-center gap-4 py-3 px-4">
       <div className="flex items-center gap-4">
         <Image
           src="/images/logo.png"
@@ -29,12 +30,33 @@ const Navbar = () => {
         <h1 className="font-bold text-lg">NuCamp</h1>
       </div>
 
+      {/* laptop */}
       <div className="hidden lg:block mx-auto">
         <ul className="flex items-center gap-2">
           {menus.map((menu) => (
             <NavLink key={menu.name} menu={menu} />
           ))}
         </ul>
+      </div>
+
+      <div
+        onClick={() => setOpenMenu(false)}
+        className="lg:hidden relative flex">
+        <button
+          onClick={(event) => {
+            event.stopPropagation();
+            setOpenMenu(!openMenu);
+          }}
+          className="ml-auto">
+          Menu
+        </button>
+        {openMenu && (
+          <ul className="absolute left-0 w-full top-10 flex flex-col gap-2 bg-white shadow-md rounded z-10 p-2">
+            {menus.map((menu) => (
+              <NavLink key={menu.name} menu={menu} />
+            ))}
+          </ul>
+        )}
       </div>
 
       {isSignedIn ? (
