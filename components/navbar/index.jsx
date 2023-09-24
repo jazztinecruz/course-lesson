@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import NavLink from "./nav-link";
-import { useState } from "react";
+import { useReducer } from "react";
 import Login from "../modals/login";
 import useMyContext from "@/hooks/use-context";
 import { useSpring } from "@react-spring/web";
@@ -14,13 +14,30 @@ const menus = [
   { name: "Contact", link: "/contact" },
 ];
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "login":
+      return { ...state, openLoginModal: action.payload };
+    case "menu":
+      return { ...state, openMenu: action.payload };
+    default:
+      return state;
+  }
+};
+
 const Navbar = () => {
-  const [openLoginModal, setOpenLoginModal] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
+  const [state, dispatch] = useReducer(reducer, {
+    openLoginModal: false,
+    openMenu: false,
+  });
   const { isSignedIn, user } = useMyContext();
 
+  const handleLoginModal = () => {
+    dispatch({ type: "login", payload: !state.openLoginModal });
+  };
+
   const animatedMenuStyle = useSpring({
-    scale: openMenu ? 1.5 : 0,
+    scale: state.openMenu ? 1.5 : 0,
     config: { duration: 500 },
   });
 
@@ -46,19 +63,20 @@ const Navbar = () => {
       </div>
 
       <div
-        onClick={() => setOpenMenu(false)}
+        onClick={() => dispatch({ type: "menu", payload: false })}
         className="lg:hidden relative flex">
         <button
           onClick={(event) => {
             event.stopPropagation();
-            setOpenMenu(!openMenu);
+            dispatch({ type: "menu", payload: !state.openMenu });
           }}
           className="ml-auto hover:bg-slate-200 px-4 py-2 rounded">
           Menu
         </button>
-        {openMenu && (
+
+        {state.openMenu && (
           <ul
-            // style={animatedMenuStyle}
+            style={animatedMenuStyle}
             className="absolute left-0 border w-64 top-10 flex flex-col gap-2 bg-white shadow-md rounded z-10 p-2">
             {menus.map((menu) => (
               <NavLink key={menu.name} menu={menu} />
@@ -80,13 +98,16 @@ const Navbar = () => {
         </div>
       ) : (
         <button
-          onClick={() => setOpenLoginModal(true)}
+          onClick={() => dispatch({ type: "login", payload: true })}
           className="border rounded px-4 py-2 border-pink text-pink font-medium hover:bg-pink duration-500 hover:text-white">
           {isSignedIn ? "Signed In" : "Login"}
         </button>
       )}
 
-      <Login isOpen={openLoginModal} setOpenLoginModal={setOpenLoginModal} />
+      <Login
+        isOpen={state.openLoginModal}
+        setOpenLoginModal={handleLoginModal}
+      />
     </nav>
   );
 };
