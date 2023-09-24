@@ -1,6 +1,6 @@
 import CommentSkeleton from "../../../components/skeleton/comment";
 
-const LoadingPage = () => {
+const CampsiteLoadingPage = () => {
   return (
     <div className="space-y-4">
       <div className="relative h-96 grid p-4 bg-slate-100 animate-pulse" />
@@ -18,4 +18,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default CampsiteLoadingPage;

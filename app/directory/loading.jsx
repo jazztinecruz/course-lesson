@@ -1,7 +1,7 @@
 import CardSkeleton from "@/components/skeleton/card";
 import Hero from "@/components/hero";
 
-const LoadingPage = () => {
+const DirectoryLoadingPage = () => {
   return (
     <div className="space-y-4">
       <Hero>
@@ -28,4 +28,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default DirectoryLoadingPage;
