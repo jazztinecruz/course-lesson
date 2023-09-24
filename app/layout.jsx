@@ -27,7 +27,7 @@ const RootLayout = ({ children }) => {
             <div className="max-w-6xl mx-auto p-4">{children}</div>
           </main>
 
-          <footer className="bg-slate-400 text-white">
+          <footer className="bg-[#292540] text-white">
             <div className="max-w-6xl mx-auto">
               <Footer />
             </div>
