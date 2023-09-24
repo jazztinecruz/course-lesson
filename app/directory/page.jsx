@@ -5,18 +5,16 @@ export const metadata = {
   title: "NuCamp | Directory",
 };
 
-export const getCampsitesData = async () => {
- let campsites = [];
+const DirectoryPage = async () => {
+  let campsites = [];
+
   try {
     const response = await fetch("http://localhost:3001/campsites");
     campsites = await response.json();
   } catch (error) {
     console.error(error);
   }
-  return campsites;
-};
- 
-const DirectoryPage = async ({ campsites }) => {
+
   return (
     <div className="space-y-4">
       <Hero>

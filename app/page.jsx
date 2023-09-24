@@ -6,7 +6,7 @@ const serverUrls = [
   "http://localhost:3001/promotions",
 ];
 
-export const getFeaturedData = async () => {
+const HomePage = async () => {
   const fetchAndParse = async (url) => {
     try {
       const response = await fetch(url);
@@ -28,13 +28,10 @@ export const getFeaturedData = async () => {
       ...partners.filter((partner) => partner.featured),
       ...promotions.filter((promotion) => promotion.featured),
     ];
-    return featured;
   } catch (error) {
     console.error(error);
   }
-};
 
-const HomePage = async ({ featured }) => {
   return (
     <div className="space-y-4">
       <Hero>
