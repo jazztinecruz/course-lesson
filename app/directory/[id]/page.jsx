@@ -1,6 +1,6 @@
-import Details from "@/app/directory/campsites/[id]/_components/details";
-import CommentForm from "@/app/directory/campsites/[id]/_components/form";
-import Comments from "@/app/directory/campsites/[id]/_components/comments";
+import Details from "@/app/directory/[id]/_components/details";
+import CommentForm from "@/app/directory/[id]/_components/form";
+import Comments from "@/app/directory/[id]/_components/comments";
 
 const CampsitePage = async ({ params: { id } }) => {
   const response = await fetch(`http://localhost:3001/campsites/${id}`);
