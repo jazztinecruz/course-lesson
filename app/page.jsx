@@ -10,7 +10,7 @@ export const getFeaturedData = async () => {
   const fetchAndParse = async (url) => {
     try {
       const response = await fetch(url);
-      await response.json();
+      return await response.json();
     } catch (error) {
       console.error(error);
     }
