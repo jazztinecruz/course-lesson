@@ -5,10 +5,18 @@ export const metadata = {
   title: "NuCamp | Directory",
 };
 
-const DirectoryPage = async () => {
-  const response = await fetch("http://localhost:3001/campsites");
-  const campsites = await response.json();
-
+export const getCampsitesData = async () => {
+ let campsites = [];
+  try {
+    const response = await fetch("http://localhost:3001/campsites");
+    campsites = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+  return campsites;
+};
+ 
+const DirectoryPage = async ({ campsites }) => {
   return (
     <div className="space-y-4">
       <Hero>
@@ -26,7 +34,7 @@ const DirectoryPage = async () => {
       </Hero>
 
       <ul className="grid lg:grid-cols-2 gap-4">
-        {campsites.map((campsite) => (
+        {campsites?.map((campsite) => (
           <div
             key={campsite.id}
             className="relative border rounded p-8 flex flex-col gap-4 shadow group">

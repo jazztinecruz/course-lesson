@@ -6,22 +6,35 @@ const serverUrls = [
   "http://localhost:3001/promotions",
 ];
 
-const HomePage = async () => {
+export const getFeaturedData = async () => {
   const fetchAndParse = async (url) => {
-    const response = await fetch(url);
-    return await response.json();
+    try {
+      const response = await fetch(url);
+      await response.json();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const campsites = await fetchAndParse(serverUrls[0]);
-  const partners = await fetchAndParse(serverUrls[1]);
-  const promotions = await fetchAndParse(serverUrls[2]);
+  let featured = [];
 
-  const featured = [
-    ...campsites.filter((campsite) => campsite.featured),
-    ...partners.filter((partner) => partner.featured),
-    ...promotions.filter((promotion) => promotion.featured),
-  ];
+  try {
+    const campsites = await fetchAndParse(serverUrls[0]);
+    const partners = await fetchAndParse(serverUrls[1]);
+    const promotions = await fetchAndParse(serverUrls[2]);
 
+    featured = [
+      ...campsites.filter((campsite) => campsite.featured),
+      ...partners.filter((partner) => partner.featured),
+      ...promotions.filter((promotion) => promotion.featured),
+    ];
+    return featured;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const HomePage = async ({ featured }) => {
   return (
     <div className="space-y-4">
       <Hero>
@@ -39,7 +52,7 @@ const HomePage = async () => {
       </Hero>
 
       <ul className="grid lg:grid-cols-2 gap-4">
-        {featured.map((featured) => (
+        {featured?.map((featured) => (
           <div
             key={featured.id}
             className="relative border rounded p-8 flex flex-col gap-4 shadow group">

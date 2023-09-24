@@ -8,12 +8,18 @@ const Partnerships = () => {
 
   useEffect(() => {
     const fetchPartners = async () => {
-      const response = await fetch("http://localhost:3001/partners");
-      const partners = await response.json();
-      setPartners(partners);
+      try {
+        const response = await fetch("http://localhost:3001/partners");
+        const partners = await response.json();
+        setPartners(partners);
+      } catch (err) {
+        console.error(err);
+      }
     };
     fetchPartners();
   }, []);
+
+  if (!partners) return null;
 
   return (
     <section className="flex flex-col items-center gap-4">
