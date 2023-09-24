@@ -1,6 +1,10 @@
 import Hero from "@/components/hero";
 import Card from "./_components/card";
 
+export const metadata = {
+  title: "NuCamp | Directory",
+};
+
 const DirectoryPage = async () => {
   const response = await fetch("http://localhost:3001/campsites");
   const campsites = await response.json();

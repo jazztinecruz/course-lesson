@@ -2,6 +2,10 @@ import Hero from "@/components/hero";
 import Details from "./_components/details";
 import ContactForm from "./_components/form";
 
+export const metadata = {
+  title: "NuCamp | Contact",
+};
+
 const ContactPage = () => {
   return (
     <div className="space-y-4">

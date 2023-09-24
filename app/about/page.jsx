@@ -3,6 +3,10 @@ import Mission from "./_components/mission";
 import Partnerships from "./_components/partnerships";
 import Quote from "./_components/quote";
 
+export const metadata = {
+  title: "NuCamp | About",
+};
+
 const AboutPage = async () => {
   return (
     <div className="grid gap-16">
