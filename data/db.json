@@ -124,6 +124,13 @@
       "campsiteId": 1,
       "user": "Jazztine",
       "id": 13
+    },
+    {
+      "rating": "5",
+      "message": "Checking ",
+      "campsiteId": 1,
+      "user": "Jazztine ",
+      "id": 14
     }
   ],
   "partners": [

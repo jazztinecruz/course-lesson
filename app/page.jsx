@@ -1,9 +1,10 @@
 import Hero from "@/components/hero";
+import { BASE_URL } from "@/constants/url";
 
 const serverUrls = [
-  "http://localhost:3001/campsites",
-  "http://localhost:3001/partners",
-  "http://localhost:3001/promotions",
+  `${BASE_URL}/campsites`,
+  `${BASE_URL}/partners`,
+  `${BASE_URL}/promotions`,
 ];
 
 const HomePage = async () => {

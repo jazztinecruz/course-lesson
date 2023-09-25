@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import { BASE_URL } from "@/constants/url";
+import Image from "next/image";
 
 const Partnerships = () => {
   const [partners, setPartners] = useState([]);
@@ -9,7 +10,7 @@ const Partnerships = () => {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const response = await fetch("http://localhost:3001/partners");
+        const response = await fetch(`${BASE_URL}/partners`);
         const partners = await response.json();
         setPartners(partners);
       } catch (err) {

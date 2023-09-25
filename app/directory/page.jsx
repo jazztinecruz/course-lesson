@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import Link from "next/link";
+import { BASE_URL } from "@/constants/url";
 
 export const metadata = {
   title: "NuCamp | Directory",
@@ -8,7 +9,7 @@ export const metadata = {
 const DirectoryPage = async () => {
   let campsites = [];
   try {
-    const response = await fetch("http://localhost:3001/campsites");
+    const response = await fetch(`${BASE_URL}/campsites`);
     campsites = await response.json();
   } catch (error) {
     console.log(error);
