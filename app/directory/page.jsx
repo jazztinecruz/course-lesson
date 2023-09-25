@@ -7,12 +7,11 @@ export const metadata = {
 
 const DirectoryPage = async () => {
   let campsites = [];
-
   try {
     const response = await fetch("http://localhost:3001/campsites");
     campsites = await response.json();
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 
   return (

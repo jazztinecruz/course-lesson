@@ -51,7 +51,7 @@ const HomePage = async () => {
       <ul className="grid lg:grid-cols-2 gap-4">
         {featured?.map((featured) => (
           <div
-            key={featured.id}
+            key={featured.name}
             className="relative border rounded p-8 flex flex-col gap-4 shadow group">
             <div className="bg-slate-100 rounded-full w-12 h-12"></div>
             <h2 className="text-xl font-bold">{featured.name}</h2>

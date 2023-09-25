@@ -117,6 +117,13 @@
       "campsiteId": 3,
       "user": "saaadlyf",
       "id": 12
+    },
+    {
+      "rating": 1,
+      "message": "sample 123",
+      "campsiteId": 1,
+      "user": "Jazztine",
+      "id": 13
     }
   ],
   "partners": [

@@ -9,10 +9,8 @@ const CampsitePage = async ({ params: { id } }) => {
     const response = await fetch(`http://localhost:3001/campsites/${id}`);
     campsite = await response.json();
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
-
-  console.log({ campsite });
 
   if (!campsite) return null;
 
