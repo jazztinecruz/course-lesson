@@ -1,6 +1,7 @@
 "use client";
 
 import LoginForm from "@/components/modals/login/form";
+import { BASE_URL } from "@/constants/url";
 import useMyContext from "@/hooks/use-context";
 import handleValidateCommentForm from "@/validations/comment";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -19,7 +20,7 @@ const CommentForm = ({ campsiteId }) => {
         message: "",
       }}
       onSubmit={async (values, { resetForm }) => {
-        await fetch("http://localhost:3001/comments", {
+        await fetch(`${BASE_URL}/comments`, {
           method: "POST",
           body: JSON.stringify({
             ...values,

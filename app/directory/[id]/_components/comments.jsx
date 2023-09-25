@@ -1,5 +1,6 @@
 "use client";
 
+import { BASE_URL } from "@/constants/url";
 import { useEffect, useState } from "react";
 
 const Comments = ({ campsiteId }) => {
@@ -7,7 +8,7 @@ const Comments = ({ campsiteId }) => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await fetch(`http://localhost:3001/comments`);
+      const response = await fetch(`${BASE_URL}/comments`);
       const allComments = await response.json();
       const filteredComments = allComments.filter(
         (comment) => comment.campsiteId === campsiteId
