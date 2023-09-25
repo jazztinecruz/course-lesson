@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import { BASE_URL } from "@/constants/url";
+import Image from "next/image";
 
 const serverUrls = [
   `${BASE_URL}/campsites`,
@@ -35,27 +36,30 @@ const HomePage = async () => {
 
   return (
     <div className="space-y-4">
-      <Hero>
-        <div className="max-w-xl">
-          <h1 className="text-4xl font-bold mb-4">
-            Discover Your Ideal Campground Getaway.
-          </h1>
-          <p className="text-lg font-semibold">
-            Explore the Beauty of Nature at Our Handpicked Campgrounds. Find
-            your perfect outdoor escape. Start your adventure today!
-          </p>
-        </div>
-      </Hero>
+      <Hero
+        title="Discover Your Ideal Campground Getaway."
+        description="Explore the Beauty of Nature at Our Handpicked Campgrounds. Find
+            your perfect outdoor escape. Start your adventure today!"
+      />
 
       <ul className="grid lg:grid-cols-2 gap-4">
         {featured?.map((featured) => (
           <div
             key={featured.name}
-            className="relative border rounded p-8 flex flex-col gap-4 shadow group">
-            <div className="bg-slate-100 rounded-full w-12 h-12"></div>
-            <h2 className="text-xl font-bold">{featured.name}</h2>
-            <p className="text-gray-500">{featured.description}</p>
-            <div className="absolute bottom-0 left-0 w-0 h-1 bg-pink group-hover:w-full duration-500" />
+            className="relative border rounded p-8 grid lg:grid-cols-2 gap-4 shadow group">
+            <div className="flex flex-col gap-2">
+              <h2 className="text-xl font-bold">{featured.name}</h2>
+              <p className="text-gray-500">{featured.description}</p>
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-pink group-hover:w-full duration-500" />
+            </div>
+            <div className="w-full h-64 lg:h-full relative">
+              <Image
+                src={`${BASE_URL}/${featured.image}`}
+                alt={featured.image}
+                fill
+                objectFit="cover"
+              />
+            </div>
           </div>
         ))}
       </ul>

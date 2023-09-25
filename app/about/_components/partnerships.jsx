@@ -32,7 +32,7 @@ const Partnerships = () => {
             key={partner.id}
             className="flex flex-col justify-center items-center text-center gap-4">
             <Image
-              src={partner.image}
+              src={`${BASE_URL}/${partner.image}`}
               alt={partner.name}
               width={90}
               height={70}
