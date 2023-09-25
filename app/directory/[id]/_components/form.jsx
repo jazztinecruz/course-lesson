@@ -35,10 +35,12 @@ const CommentForm = ({ campsiteId }) => {
       validate={handleValidateCommentForm}>
       <Form className="flex flex-col gap-4 w-full border rounded p-4">
         <div className="flex flex-col gap-1">
+          <label className="text-sm mb-1">
+            How much will you rate this Campsite?
+          </label>
           <Field
             name="rating"
             as="select"
-            placeholder="How much will you rate this Campsite?"
             className="w-full border px-4 py-2 rounded placeholder:text-sm outline outline-transparent focus:outline-pink">
             <option value={1}>1</option>
             <option value={2}>2</option>
