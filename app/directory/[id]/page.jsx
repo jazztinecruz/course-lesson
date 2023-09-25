@@ -7,7 +7,7 @@ const CampsitePage = async ({ params: { id } }) => {
   let campsite = {};
 
   try {
-    const response = await fetch(`${BASE_URL}/campsites/${id}`);
+    const response = await fetch(`${BASE_URL}campsites/${id}`);
     campsite = await response.json();
   } catch (error) {
     console.log(error);

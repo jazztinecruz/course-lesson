@@ -4,9 +4,9 @@ import { BASE_URL } from "@/constants/url";
 import Image from "next/image";
 
 const serverUrls = [
-  `${BASE_URL}/campsites`,
-  `${BASE_URL}/partners`,
-  `${BASE_URL}/promotions`,
+  `${BASE_URL}campsites`,
+  `${BASE_URL}partners`,
+  `${BASE_URL}promotions`,
 ];
 
 const HomePage = async () => {

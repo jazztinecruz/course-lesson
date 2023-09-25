@@ -10,7 +10,7 @@ const Partnerships = () => {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const response = await fetch(`${BASE_URL}/partners`);
+        const response = await fetch(`${BASE_URL}partners`);
         const partners = await response.json();
         setPartners(partners);
       } catch (err) {

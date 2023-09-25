@@ -20,7 +20,7 @@ const CommentForm = ({ campsiteId }) => {
         message: "",
       }}
       onSubmit={async (values, { resetForm }) => {
-        await fetch(`${BASE_URL}/comments`, {
+        await fetch(`${BASE_URL}comments`, {
           method: "POST",
           body: JSON.stringify({
             ...values,
