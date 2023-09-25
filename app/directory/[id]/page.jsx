@@ -18,7 +18,7 @@ const CampsitePage = async ({ params: { id } }) => {
   return (
     <div className="space-y-4">
       <Details campsite={campsite} />
-      <div className="grid lg:grid-cols-[2fr,1fr] items-start gap-6">
+      <div className="grid lg:grid-cols-2 items-start gap-6">
         <Comments campsiteId={campsite.id} />
         <CommentForm campsiteId={campsite.id} />
       </div>

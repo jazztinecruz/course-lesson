@@ -56,7 +56,7 @@ const CommentForm = ({ campsiteId }) => {
             as="textarea"
             name="message"
             placeholder="What do you think of this Campsite?"
-            className="w-full border px-4 py-2 rounded placeholder:text-sm outline outline-transparent focus:outline-pink"
+            className="w-full h-64 border px-4 py-2 rounded placeholder:text-sm outline outline-transparent focus:outline-pink"
           />
           <ErrorMessage name="message" />
         </div>
