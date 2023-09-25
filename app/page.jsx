@@ -1,7 +1,6 @@
-import Card from "@/components/card";
+import Card from "@/components/cards";
 import Hero from "@/components/hero";
 import { BASE_URL } from "@/constants/url";
-import Image from "next/image";
 
 const serverUrls = [
   `${BASE_URL}campsites`,

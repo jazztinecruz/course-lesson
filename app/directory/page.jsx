@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import { BASE_URL } from "@/constants/url";
-import Card from "@/components/card";
+import Card from "@/components/cards";
 
 export const metadata = {
   title: "NuCamp | Directory",
