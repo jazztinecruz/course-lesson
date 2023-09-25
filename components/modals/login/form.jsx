@@ -24,8 +24,13 @@ const LoginForm = ({ setOpenLoginModal }) => {
           Welcome to <span className="text-pink font-bold">NuCamp</span>
         </h1>
         <p className="text-gray-500 text-sm max-w-sm">
-          Log In to your NuCamp account to access our exciting features and
-          resources.
+          Log in to your account to{" "}
+          <span className="text-pink font-bold">
+            access our exciting features
+          </span>
+          , including
+          <span className="text-pink font-bold"> commenting</span> on every
+          campground.
         </p>
       </div>
 
