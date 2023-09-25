@@ -9,7 +9,7 @@ export const metadata = {
 const DirectoryPage = async () => {
   let campsites = [];
   try {
-    const response = await fetch(`${BASE_URL}/campsites`);
+    const response = await fetch(`${BASE_URL}campsites`);
     campsites = await response.json();
   } catch (error) {
     console.log(error);

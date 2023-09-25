@@ -8,7 +8,7 @@ const Comments = ({ campsiteId }) => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await fetch(`${BASE_URL}/comments`);
+      const response = await fetch(`${BASE_URL}comments`);
       const allComments = await response.json();
       const filteredComments = allComments.filter(
         (comment) => comment.campsiteId === campsiteId
