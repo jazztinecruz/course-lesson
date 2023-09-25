@@ -19,14 +19,13 @@ const DirectoryPage = async () => {
     <div className="space-y-4">
       <Hero>
         <div className="max-w-xl">
-          <h1 className="text-3xl font-bold mb-4 flex flex-col">
-            <span>Bootcamp Campsites</span>
-            <span>Explore Your Options</span>
+          <h1 className="text-4xl font-bold mb-4">
+            Explore Our Campground Collection.
           </h1>
-          <p className="font-semibold">
-            Welcome to our bootcamp campsites page! Here, you can find a list of
-            all available campsites for your coding bootcamp experience. Choose
-            the one that suits you best and start your coding journey today.
+          <p className="text-lg font-semibold">
+            Dive into a World of Outdoor Adventures. Browse our diverse
+            selection of campgrounds, each with its unique charm and appeal.
+            Find the perfect spot to connect with nature.
           </p>
         </div>
       </Hero>

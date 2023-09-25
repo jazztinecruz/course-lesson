@@ -38,13 +38,11 @@ const HomePage = async () => {
       <Hero>
         <div className="max-w-xl">
           <h1 className="text-4xl font-bold mb-4">
-            Embark on Your Tech Journey Today.
+            Discover Your Ideal Campground Getaway.
           </h1>
           <p className="text-lg font-semibold">
-            Unlock Your Coding Potential with the Highest-Rated and
-            Budget-Friendly Coding Bootcamps. Transform into a software engineer
-            with our cutting-edge curriculum, adaptable learning hours, seasoned
-            mentors, and cost-effective tuition.
+            Explore the Beauty of Nature at Our Handpicked Campgrounds. Find
+            your perfect outdoor escape. Start your adventure today!
           </p>
         </div>
       </Hero>

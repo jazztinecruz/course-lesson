@@ -11,14 +11,11 @@ const ContactPage = () => {
     <div className="space-y-4">
       <Hero>
         <div className="max-w-xl">
-          <h1 className="text-3xl font-bold mb-4 flex flex-col">
-            <span>Contact Us</span>
-            <span>We&apos;re here to help!</span>
-          </h1>
-          <p className="font-semibold">
-            If you have any questions or need assistance, please don&apos;t
-            hesitate to reach out to us. Our team is dedicated to providing you
-            with the support you need on your coding bootcamp journey.
+          <h1 className="text-4xl font-bold mb-4">Get in Touch with Us.</h1>
+          <p className="text-lg font-semibold">
+            Reach Out for Questions or Inquiries. We're here to assist you!
+            Contact our friendly team for any assistance or information you may
+            need. Your adventure awaits.
           </p>
         </div>
       </Hero>
