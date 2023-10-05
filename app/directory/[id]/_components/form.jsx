@@ -17,7 +17,7 @@ const CommentForm = ({ campsiteId }) => {
     <Formik
       initialValues={{
         rating: 1,
-        message: "",
+        text: "",
       }}
       onSubmit={async (values, { resetForm }) => {
         await fetch(`${BASE_URL}comments`, {
@@ -25,7 +25,8 @@ const CommentForm = ({ campsiteId }) => {
           body: JSON.stringify({
             ...values,
             campsiteId,
-            user,
+            author: user,
+            date: new Date(),
           }),
           headers: { "Content-Type": "application/json" },
         });
@@ -54,11 +55,11 @@ const CommentForm = ({ campsiteId }) => {
         <div className="flex flex-col gap-1">
           <Field
             as="textarea"
-            name="message"
+            name="text"
             placeholder="What do you think of this Campsite?"
             className="w-full h-64 border px-4 py-2 rounded placeholder:text-sm outline outline-transparent focus:outline-pink"
           />
-          <ErrorMessage name="message" />
+          <ErrorMessage name="text" />
         </div>
 
         <button

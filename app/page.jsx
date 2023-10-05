@@ -1,6 +1,7 @@
 import Card from "@/components/cards";
 import Hero from "@/components/hero";
 import { BASE_URL } from "@/constants/url";
+export const dynamic = 'force-dynamic'
 
 const serverUrls = [
   `${BASE_URL}campsites`,

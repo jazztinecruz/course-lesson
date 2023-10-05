@@ -29,12 +29,12 @@ const Comments = ({ campsiteId }) => {
             className="flex flex-col gap-4 border rounded p-4">
             <div className="flex items-center gap-4">
               <div className="bg-slate-100 rounded-full w-10 h-10 flex items-center justify-center uppercase font-bold border border-pink text-sm">
-                {comment.user.slice(0, 2)}
+                {comment.author?.slice(0, 2) ?? ""}
               </div>
               <div className="flex flex-col">
-                <h3 className="font-semibold text-sm">{comment.user}</h3>
+                <h3 className="font-semibold text-sm">{comment.author}</h3>
                 <div className="flex items-center">
-                  {Array(parseInt(comment.rating))
+                  {Array(parseInt(comment?.rating ?? 0))
                     .fill()
                     .map((_, index) => (
                       <div key={index}>⭐</div>
@@ -42,7 +42,7 @@ const Comments = ({ campsiteId }) => {
                 </div>
               </div>
             </div>
-            <p className="text-sm">{comment.message}</p>
+            <p className="text-sm">{comment.text}</p>
           </li>
         ))}
       </ul>

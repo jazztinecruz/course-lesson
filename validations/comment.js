@@ -12,7 +12,7 @@ const handleValidateCommentForm = (values) => {
   };
 
   validateField("rating", 1, 5);
-  validateField("message", 2, 100);
+  validateField("text", 2, 100);
 
   return errors;
 };

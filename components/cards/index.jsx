@@ -35,7 +35,7 @@ const Card = ({ data, hasReadMore }) => {
       </div>
       <div className="w-full h-64 lg:h-full relative">
         <Image
-          src={`${BASE_URL}${data.image}`}
+          src={data.image}
           alt={data.image}
           fill
           objectFit="cover"
