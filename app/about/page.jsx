@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import Mission from "./_components/mission";
 import Partnerships from "./_components/partnerships";
+import Promotions from "./_components/promotions";
 import Quote from "./_components/quote";
 
 export const metadata = {
@@ -19,6 +20,7 @@ const AboutPage = async () => {
       <Mission />
       <Quote />
       <Partnerships />
+      <Promotions />
     </div>
   );
 };
