@@ -11,14 +11,6 @@ const Card = ({ data, hasReadMore }) => {
         <h2 className="text-xl font-bold">{data.name}</h2>
         <p className="text-gray-500 text-sm">{data.description}</p>
 
-        {hasReadMore && (
-          <Link
-            href={`/directory/${data.id}`}
-            className="text-sm text-gray-500 font-semibold hover:underline">
-            Read More
-          </Link>
-        )}
-
         <div className="flex flex-wrap gap-2">
           {data.featured && (
             <div className="bg-pink text-white rounded px-3 py-1 w-fit text-xs">
@@ -32,6 +24,13 @@ const Card = ({ data, hasReadMore }) => {
           )}
         </div>
 
+        {hasReadMore && (
+          <Link
+            href={`/directory/${data.id}`}
+            className="text-sm text-gray-500 font-semibold hover:underline mt-auto">
+            Read More
+          </Link>
+        )}
         <div className="absolute bottom-0 left-0 w-0 h-1 bg-pink group-hover:w-full duration-500" />
       </div>
       <div className="w-full h-64 lg:h-full relative">
