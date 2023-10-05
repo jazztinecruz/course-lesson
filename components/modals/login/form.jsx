@@ -28,7 +28,8 @@ const LoginForm = ({ setOpenLoginModal }) => {
           <span className="text-pink font-bold">
             access our exciting features
           </span>
-          , including
+          <br />
+          including
           <span className="text-pink font-bold"> commenting</span> on every
           campground.
         </p>
