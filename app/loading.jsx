@@ -1,4 +1,4 @@
-import CardSkeleton from "../components/skeleton/card";
+import CardSkeleton from "../components/skeletons/card";
 import Hero from "@/components/hero";
 
 const LoadingPage = () => {

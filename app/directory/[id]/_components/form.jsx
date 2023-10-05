@@ -35,7 +35,7 @@ const CommentForm = ({ campsiteId }) => {
       validate={handleValidateCommentForm}>
       <Form className="flex flex-col gap-4 w-full border rounded p-4">
         <div className="flex flex-col gap-1">
-          <label className="text-sm mb-1">
+          <label className="text-sm mb-1 font-semibold">
             How much will you rate this Campsite?
           </label>
           <Field

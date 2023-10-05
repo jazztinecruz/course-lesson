@@ -1,4 +1,4 @@
-import CardSkeleton from "@/components/skeleton/card";
+import CardSkeleton from "@/components/skeletons/card";
 import Hero from "@/components/hero";
 
 const DirectoryLoadingPage = () => {
@@ -17,7 +17,7 @@ const DirectoryLoadingPage = () => {
           </p>
         </div>
       </Hero>
-
+      
       <ul className="grid lg:grid-cols-2 gap-4">
         <CardSkeleton />
         <CardSkeleton />

@@ -23,7 +23,7 @@ const DirectoryPage = async () => {
             selection of campgrounds, each with its unique charm and appeal.
             Find the perfect spot to connect with nature."
       />
-
+      
       <ul className="grid lg:grid-cols-2 gap-4">
         {campsites?.map((campsite) => (
           <Card key={campsite.id} data={campsite} hasReadMore />

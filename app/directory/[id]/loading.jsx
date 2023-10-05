@@ -1,4 +1,4 @@
-import CommentSkeleton from "../../../components/skeleton/comment";
+import CommentSkeleton from "@/components/skeletons/comment";
 
 const CampsiteLoadingPage = () => {
   return (
