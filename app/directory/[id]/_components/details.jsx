@@ -12,7 +12,7 @@ const Details = ({ campsite }) => {
         className="-z-10 rounded-md"
       />
 
-      <div className="flex flex-col mt-auto gap-2 z-50">
+      <div className="flex flex-col mt-auto gap-2 z-10">
         <h2 className="text-2xl font-bold text-white">{campsite.name}</h2>
         <p className="text-white opacity-75 font-semibold max-w-2xl">
           {campsite.description}

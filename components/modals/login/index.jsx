@@ -6,7 +6,7 @@ const Login = ({ isOpen, setOpenLoginModal }) => {
   return (
     <div
       onClick={() => setOpenLoginModal(false)}
-      className="absolute inset-0 backdrop-blur-sm z-50 bg-black/10 flex items-center justify-center">
+      className="fixed inset-0 backdrop-blur-sm z-50 bg-black/20 flex items-center justify-center">
       <LoginForm setOpenLoginModal={setOpenLoginModal} />
     </div>
   );

@@ -50,7 +50,7 @@ const Navbar = () => {
           width={50}
           height={50}
         />
-        <h1 className="font-bold text-lg">NuCamp</h1>
+        <h1 className="hidden md:block font-bold text-lg">NuCamp</h1>
       </div>
 
       {/* laptop navigation links */}

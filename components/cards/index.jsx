@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BASE_URL } from "@/constants/url";
 
 const Card = ({ data, hasReadMore }) => {
   return (
