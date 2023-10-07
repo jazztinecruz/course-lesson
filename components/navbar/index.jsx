@@ -78,18 +78,20 @@ const Navbar = () => {
         {state.openMenu && (
           <ul
             style={animatedMenuStyle}
-            className="absolute left-0 border w-64 top-10 flex flex-col gap-2 bg-white shadow-md rounded z-10 p-2">
+            className="absolute right-0 border w-auto md:w-64 top-10 flex flex-col gap-2 bg-white shadow-md rounded z-10 p-2">
             {menus.map((menu) => (
               <NavLink key={menu.name} menu={menu} />
             ))}
           </ul>
         )}
       </div>
-      
+
       {/* sign in button and component */}
       {isSignedIn ? (
         <div className="flex items-center gap-4">
-          <h2 className="font-semibold text-right">Welcome {user}!</h2>
+          <h2 className="hidden md:block font-semibold text-right">
+            Welcome {user}!
+          </h2>
           <Image
             src="/images/icons/unicorn.png"
             alt="Unicorn Image"

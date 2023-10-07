@@ -24,7 +24,7 @@ const Promotions = () => {
 
   return (
     <section className="flex flex-col items-center gap-4">
-      <h2 className="text-center text-2xl font-bold">
+      <h2 className="text-center text-xl md:text-2xl font-bold">
         Our Community Promotions
       </h2>
 

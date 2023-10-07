@@ -4,7 +4,7 @@ const Mission = () => {
   return (
     <div className="flex flex-col items-center gap-16 px-4">
       <div className="flex flex-col text-center gap-4">
-        <h1 className="text-2xl font-bold">Our Mission</h1>
+        <h1 className="text-xl md:text-2xl font-bold">Our Mission</h1>
         <p className="max-w-3xl">
           We present a curated database of the best campsites in the vast woods
           and backcountry of the World Wide Web Wilderness. We increase access
