@@ -12,7 +12,7 @@ const DirectoryPage = async () => {
     const response = await fetch(`${BASE_URL}campsites`);
     campsites = await response.json();
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 
   return (

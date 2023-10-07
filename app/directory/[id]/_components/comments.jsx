@@ -5,15 +5,18 @@ import { useEffect, useState } from "react";
 
 const Comments = ({ campsiteId }) => {
   const [comments, setComments] = useState([]);
-
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await fetch(`${BASE_URL}comments`);
-      const allComments = await response.json();
-      const filteredComments = allComments.filter(
-        (comment) => comment.campsiteId === campsiteId
-      );
-      setComments(filteredComments);
+      try {
+        const response = await fetch(`${BASE_URL}comments`);
+        const allComments = await response.json();
+        const filteredComments = allComments.filter(
+          (comment) => comment.campsiteId === campsiteId
+        );
+        setComments(filteredComments);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchComments();
