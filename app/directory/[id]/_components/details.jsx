@@ -1,11 +1,10 @@
-import { BASE_URL } from "@/constants/url";
 import Image from "next/image";
 
 const Details = ({ campsite }) => {
   return (
     <div className="relative h-96 grid p-4">
       <Image
-        src={`${BASE_URL}${campsite.image}`}
+        src={campsite.image}
         alt={campsite.name}
         fill
         objectFit="cover"

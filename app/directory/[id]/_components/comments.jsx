@@ -1,7 +1,7 @@
 "use client";
 
-import { BASE_URL } from "@/constants/url";
 import { useEffect, useState } from "react";
+import dbData from "@/data/db.json";
 
 const Comments = ({ campsiteId }) => {
   const [comments, setComments] = useState([]);
@@ -9,8 +9,7 @@ const Comments = ({ campsiteId }) => {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch(`${BASE_URL}comments`);
-        const allComments = await response.json();
+        const allComments = dbData.comments;
         const filteredComments = allComments.filter(
           (comment) => comment.campsiteId === campsiteId
         );
@@ -21,7 +20,7 @@ const Comments = ({ campsiteId }) => {
     };
 
     fetchComments();
-  }, [comments]);
+  }, []);
 
   return (
     <div className="space-y-4">

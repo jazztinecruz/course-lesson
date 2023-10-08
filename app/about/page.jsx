@@ -3,23 +3,19 @@ import Mission from "./_components/mission";
 import Partnerships from "./_components/partners";
 import Promotions from "./_components/promotions";
 import Quote from "./_components/quote";
-import { BASE_URL } from "@/constants/url";
-export const dynamic = "force-dynamic";
+import dbData from "@/data/db.json";
 
 export const metadata = {
   title: "NuCamp | About",
 };
 
-const AboutPage = async () => {
+const AboutPage = () => {
   let partners = [];
   let promotions = [];
 
   try {
-    const partnerResponse = await fetch(`${BASE_URL}partners`);
-    partners = await partnerResponse.json();
-
-    const promotionResponse = await fetch(`${BASE_URL}promotions`);
-    promotions = await promotionResponse.json();
+    partners = dbData.partners;
+    promotions = dbData.promotions;
   } catch (err) {
     throw new Error("Fetch Data Failed from About Page.");
   }

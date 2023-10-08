@@ -1,19 +1,18 @@
 import Details from "@/app/directory/[id]/_components/details";
 import Comments from "@/app/directory/[id]/_components/comments";
 import CommentForm from "@/app/directory/[id]/_components/form";
-import { BASE_URL } from "@/constants/url";
-export const dynamic = "force-dynamic";
+import dbData from "@/data/db.json";
 
 export const metadata = {
   title: "NuCamp | Campground",
 };
 
-const CampsitePage = async ({ params: { id } }) => {
+const CampsitePage = ({ params: { id } }) => {
   let campsite = {};
 
   try {
-    const response = await fetch(`${BASE_URL}campsites/${id}`);
-    campsite = await response.json();
+    const campsites = dbData.campsites;
+    campsite = campsites.find((campsite) => campsite.id === parseInt(id));
   } catch (error) {
     throw new Error("Fetch Data Failed from Campground Page.");
   }

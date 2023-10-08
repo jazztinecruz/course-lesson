@@ -1,18 +1,16 @@
 import Hero from "@/components/hero";
-import { BASE_URL } from "@/constants/url";
 import Card from "@/components/cards";
-export const dynamic = "force-dynamic";
+import dbData from "@/data/db.json";
 
 export const metadata = {
   title: "NuCamp | Directory",
 };
 
-const DirectoryPage = async () => {
+const DirectoryPage = () => {
   let campsites = [];
 
   try {
-    const response = await fetch(`${BASE_URL}campsites`);
-    campsites = await response.json();
+    campsites = dbData.campsites;
   } catch (error) {
     throw new Error("Fetch Data Failed from Directory Page.");
   }

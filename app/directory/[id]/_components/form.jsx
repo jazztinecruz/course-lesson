@@ -1,11 +1,11 @@
 "use client";
 
 import LoginForm from "@/components/modals/login/form";
-import { BASE_URL } from "@/constants/url";
 import useMyContext from "@/hooks/use-context";
 import handleValidateCommentForm from "@/validations/comment";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useRouter } from "next/navigation";
+import dbData from "@/data/db.json";
 
 const CommentForm = ({ campsiteId }) => {
   const { user } = useMyContext();
@@ -20,16 +20,13 @@ const CommentForm = ({ campsiteId }) => {
         text: "",
       }}
       onSubmit={async (values, { resetForm }) => {
-        await fetch(`${BASE_URL}comments`, {
-          method: "POST",
-          body: JSON.stringify({
-            ...values,
-            campsiteId,
-            author: user,
-            date: new Date(),
-          }),
-          headers: { "Content-Type": "application/json" },
-        });
+        const newComment = {
+          ...values,
+          campsiteId,
+          author: user,
+          date: new Date(),
+        };
+        dbData.comments.push(newComment);
         router.refresh();
         resetForm();
       }}
