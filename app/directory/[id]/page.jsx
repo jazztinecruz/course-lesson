@@ -2,6 +2,7 @@ import Details from "@/app/directory/[id]/_components/details";
 import Comments from "@/app/directory/[id]/_components/comments";
 import CommentForm from "@/app/directory/[id]/_components/form";
 import { BASE_URL } from "@/constants/url";
+export const dynamic = "force-dynamic";
 
 const CampsitePage = async ({ params: { id } }) => {
   let campsite = {};
@@ -10,7 +11,7 @@ const CampsitePage = async ({ params: { id } }) => {
     const response = await fetch(`${BASE_URL}campsites/${id}`);
     campsite = await response.json();
   } catch (error) {
-    console.log(error);
+    throw new Error("Fetch Data Failed from Campground Page.");
   }
 
   if (!campsite) return null;

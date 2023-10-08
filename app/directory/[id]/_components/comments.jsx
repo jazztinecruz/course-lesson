@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const Comments = ({ campsiteId }) => {
   const [comments, setComments] = useState([]);
+
   useEffect(() => {
     const fetchComments = async () => {
       try {

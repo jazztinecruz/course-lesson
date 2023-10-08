@@ -16,7 +16,7 @@ const HomePage = async () => {
       const response = await fetch(url);
       return await response.json();
     } catch (error) {
-      console.error(error);
+      throw new Error("Fetch Data Failed from Home Page.");
     }
   };
 
@@ -35,7 +35,7 @@ const HomePage = async () => {
       ...promotions.filter((promotion) => promotion.featured),
     ];
   } catch (error) {
-    console.error(error);
+    throw new Error("Fetch Data Failed from Home Page.");
   }
 
   return (
