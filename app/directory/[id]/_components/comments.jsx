@@ -1,26 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import dbData from "@/data/db.json";
-
-const Comments = ({ campsiteId }) => {
-  const [comments, setComments] = useState([]);
-
-  useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const allComments = dbData.comments;
-        const filteredComments = allComments.filter(
-          (comment) => comment.campsiteId === campsiteId
-        );
-        setComments(filteredComments);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchComments();
-  }, []);
+const Comments = ({ comments }) => {
+  if (!comments) return null;
 
   return (
     <div className="space-y-4">

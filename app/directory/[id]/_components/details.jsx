@@ -7,8 +7,7 @@ const Details = ({ campsite }) => {
         src={campsite.image}
         alt={campsite.name}
         fill
-        objectFit="cover"
-        className="-z-10 rounded-md"
+        className="-z-10 rounded-md object-cover"
       />
 
       <div className="flex flex-col mt-auto gap-2 z-10">

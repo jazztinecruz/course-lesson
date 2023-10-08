@@ -1,21 +1,32 @@
+"use client";
+
 import Details from "@/app/directory/[id]/_components/details";
 import Comments from "@/app/directory/[id]/_components/comments";
 import CommentForm from "@/app/directory/[id]/_components/form";
 import dbData from "@/data/db.json";
-
-export const metadata = {
-  title: "NuCamp | Campground",
-};
+import { useState, useEffect } from "react";
 
 const CampsitePage = ({ params: { id } }) => {
-  let campsite = {};
+  const [comments, setComments] = useState([]);
+  const [campsite, setCampsite] = useState({});
 
-  try {
-    const campsites = dbData.campsites;
-    campsite = campsites.find((campsite) => campsite.id === parseInt(id));
-  } catch (error) {
-    throw new Error("Fetch Data Failed from Campground Page.");
-  }
+  useEffect(() => {
+    try {
+      const campsites = dbData.campsites;
+      const commentsData = dbData.comments;
+      const selectedCampsite = campsites.find(
+        (camp) => camp.id === parseInt(id)
+      );
+      const selectedComments = commentsData.filter(
+        (comment) => comment.campsiteId === parseInt(id)
+      );
+
+      setCampsite(selectedCampsite);
+      setComments(selectedComments);
+    } catch (error) {
+      throw new Error("Fetch Data Failed from Campground Page");
+    }
+  }, []);
 
   if (!campsite) return null;
 
@@ -23,8 +34,8 @@ const CampsitePage = ({ params: { id } }) => {
     <div className="space-y-4">
       <Details campsite={campsite} />
       <div className="grid lg:grid-cols-2 items-start gap-6">
-        <Comments campsiteId={campsite.id} />
-        <CommentForm campsiteId={campsite.id} />
+        <Comments comments={comments} />
+        <CommentForm setComments={setComments} campsiteId={campsite.id} />
       </div>
     </div>
   );

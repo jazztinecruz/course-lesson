@@ -30,7 +30,7 @@ const HomePage = () => {
           src="/images/mobile-cover.png"
           alt="Background Cover"
           fill
-          objectFit="cover"
+          className="object-cover"
         />
       </div>
 
@@ -39,8 +39,7 @@ const HomePage = () => {
           src="/images/cover.png"
           alt="Background Cover"
           fill
-          objectFit="cover"
-          objectPosition="left"
+          className="object-cover object-center"
         />
       </div>
     </div>

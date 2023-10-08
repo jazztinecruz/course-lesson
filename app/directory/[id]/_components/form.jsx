@@ -5,9 +5,8 @@ import useMyContext from "@/hooks/use-context";
 import handleValidateCommentForm from "@/validations/comment";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useRouter } from "next/navigation";
-import dbData from "@/data/db.json";
 
-const CommentForm = ({ campsiteId }) => {
+const CommentForm = ({ setComments, campsiteId }) => {
   const { user } = useMyContext();
   const router = useRouter();
 
@@ -26,7 +25,7 @@ const CommentForm = ({ campsiteId }) => {
           author: user,
           date: new Date(),
         };
-        dbData.comments.push(newComment);
+        await setComments((prevComments) => [...prevComments, newComment]);
         router.refresh();
         resetForm();
       }}
