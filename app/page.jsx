@@ -31,6 +31,7 @@ const HomePage = () => {
           alt="Background Cover"
           fill
           className="object-cover"
+          priority
         />
       </div>
 
@@ -40,6 +41,7 @@ const HomePage = () => {
           alt="Background Cover"
           fill
           className="object-cover object-left"
+          priority
         />
       </div>
     </div>

@@ -8,6 +8,7 @@ const Details = ({ campsite }) => {
         alt={campsite.name}
         fill
         className="-z-10 rounded-md object-cover"
+        priority
       />
 
       <div className="flex flex-col mt-auto gap-2 z-10">

@@ -38,6 +38,7 @@ const Card = ({ data, hasReadMore }) => {
           alt={data.image}
           fill
           className="rounded-md object-cover"
+          priority
         />
       </div>
     </div>
