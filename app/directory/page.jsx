@@ -14,7 +14,7 @@ const DirectoryPage = async () => {
     const response = await fetch(`${BASE_URL}campsites`);
     campsites = await response.json();
   } catch (error) {
-    throw new Error("Fetch Data Failed from Directories Page.");
+    throw new Error("Fetch Data Failed from Directory Page.");
   }
 
   return (

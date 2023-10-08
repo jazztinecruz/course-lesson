@@ -4,6 +4,10 @@ import CommentForm from "@/app/directory/[id]/_components/form";
 import { BASE_URL } from "@/constants/url";
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "NuCamp | Campground",
+};
+
 const CampsitePage = async ({ params: { id } }) => {
   let campsite = {};
 

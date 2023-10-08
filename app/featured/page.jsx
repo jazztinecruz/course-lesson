@@ -3,6 +3,10 @@ import Hero from "@/components/hero";
 import { BASE_URL } from "@/constants/url";
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  title: "NuCamp | Featured",
+};
+
 const serverUrls = [
   `${BASE_URL}campsites`,
   `${BASE_URL}partners`,
@@ -16,14 +20,14 @@ const FeaturedPage = async () => {
       const response = await fetch(url);
       return await response.json();
     } catch (error) {
-      throw new Error("Fetch Data Failed from Home Page.");
+      throw new Error("Fetch Data Failed from Featured Page.");
     }
   };
 
   //create a variable "featured" that will store all the featured from different urls
   let featured = [];
 
-  //use the fetchUrl to fetch every url and filter the featured items
+  //use the fetchUrl to fetch every url and store the filtered featured items
   try {
     const campsites = await fetchUrl(serverUrls[0]);
     const partners = await fetchUrl(serverUrls[1]);
