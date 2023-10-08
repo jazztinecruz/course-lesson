@@ -9,6 +9,7 @@ import { useSpring } from "@react-spring/web";
 
 const menus = [
   { name: "Home", link: "/" },
+  { name: "Featured", link: "/featured" },
   { name: "Directory", link: "/directory" },
   { name: "About", link: "/about" },
   { name: "Contact", link: "/contact" },
