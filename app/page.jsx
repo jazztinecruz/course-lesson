@@ -1,7 +1,7 @@
 import Card from "@/components/cards";
 import Hero from "@/components/hero";
 import { BASE_URL } from "@/constants/url";
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 
 const serverUrls = [
   `${BASE_URL}campsites`,
@@ -10,7 +10,8 @@ const serverUrls = [
 ];
 
 const HomePage = async () => {
-  const fetchAndParse = async (url) => {
+  //create a function for fetching each url
+  const fetchUrl = async (url) => {
     try {
       const response = await fetch(url);
       return await response.json();
@@ -19,12 +20,14 @@ const HomePage = async () => {
     }
   };
 
+  //create a variable "featured" that will store all the featured from different urls
   let featured = [];
 
+  //use the fetchUrl to fetch every url and filter the featured items
   try {
-    const campsites = await fetchAndParse(serverUrls[0]);
-    const partners = await fetchAndParse(serverUrls[1]);
-    const promotions = await fetchAndParse(serverUrls[2]);
+    const campsites = await fetchUrl(serverUrls[0]);
+    const partners = await fetchUrl(serverUrls[1]);
+    const promotions = await fetchUrl(serverUrls[2]);
 
     featured = [
       ...campsites.filter((campsite) => campsite.featured),
