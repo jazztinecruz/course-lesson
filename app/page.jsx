@@ -39,7 +39,7 @@ const HomePage = () => {
           src="/images/cover.png"
           alt="Background Cover"
           fill
-          className="object-cover object-center"
+          className="object-cover object-left"
         />
       </div>
     </div>
