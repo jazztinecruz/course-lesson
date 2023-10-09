@@ -20,6 +20,7 @@ const ContactForm = () => {
         }}
         onSubmit={(values, { resetForm }) => {
           console.log({ values });
+          alert("We Successfully Sent your Feedback.");
           resetForm();
         }}
         validate={handleValidateContactForm}>
